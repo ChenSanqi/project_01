@@ -1,6 +1,7 @@
 // 处理data对象
 // @param{data}需要发送到服务器的数据
 // @returns{string}返回拼接好的字符串
+//
 function resolveData(data) {
     var arr = []
     for (var k in data) {
