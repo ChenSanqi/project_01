@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jsonp的实现原理</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 1、将函数的定义和调用分为两个script -->
+    <!-- <script>
+        function success(data){
+            console.log('拿到了data数据');
+            console.log(data);
+        }
+    </script>
+    <script>
+        success({name:'zs',age:20})
+    </script> -->
+
+    <!-- 2、将函数的调用抽离为单独的js文件 -->
+    <script>
+        function success(data) {
+            console.log('拿到了data数据');
+            console.log(data);
+        }
+    </script>
+    <!-- 动态自动执行getdata里面所有的代码 -->
+    <script src="./jsonpjs/getdata.js"></script>
+
+    <!-- 3、通过callback指定回调函数的名称 -->
+    <script src="./jsonpjs/getdata.js?callback=success"></script>
+    
+    
+</body>
+
+</html>

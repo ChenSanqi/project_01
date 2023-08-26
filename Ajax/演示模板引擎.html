@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!-- 1、导入模板引擎 -->
+    <!-- 在window全局，多一个函数，叫做template('模板ID'，需要渲染的数据) -->
+    <script src="art-template4.13.2.js"></script>
+</head>
+
+<body>
+    <div id="con"></div>
+    <!-- 3、定义模板 -->
+    <!-- 模板的HTML结构，必须定义到script中,注意这里的type需要时html -->
+    <script type="text/html" id="tt">
+        <h1>{{name}}</h1>
+    </script>
+    <script>
+        // 2、定义需要渲染的数据
+        var data = { name: 'zs' }
+        // 4、调用template函数
+        var ht=template('tt',data)
+        // console.log(ht);
+        // 5、渲染html结构
+        $('#con').html(ht)
+    </script>
+</body>
+
+</html>

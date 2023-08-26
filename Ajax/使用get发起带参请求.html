@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发起单参数的get请求/post同理</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="id">发起单参数的get请求</button>
+    <script>
+        $(function () {
+            $('#id').on('click', function () {
+                $.get('http://www.liulongbin.top:3006', { id: 1 }, function (res) {
+                    console.log(res);
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
