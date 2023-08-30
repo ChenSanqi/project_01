@@ -66,4 +66,28 @@ git branch -d 分支名称
 
 #遇到冲突时的分支合并
 
-#将本地分支推送到远程分支
+#第一次将本地分支推送到远程分支
+git push -u 远程仓库的别名 本地分支名称：远程分名称
+
+ps:不是第一次就不用 -u
+例如：
+git push -u origin payment:pay
+不改名字就省略：符号
+git push -u origin payment
+
+ps：默认形况下远程仓库就叫origin
+
+#查看远程分支列表
+git remote show 远程仓库名称
+
+#跟踪分支：从远程分支下载到本地仓库中
+git checkout 远程分支的名称
+
+从远程分支下载到本地仓库中,并重命名分支
+git checkout -b 本地分支名称 远程仓库名称/远程分支名称
+
+#拉去远程分支的最新代码,处于哪个分支就更新的哪个
+git pull
+
+#删除远程分支
+git push 远程仓库名称 --delete 远程分支名称
